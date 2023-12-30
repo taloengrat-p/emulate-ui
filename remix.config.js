@@ -7,4 +7,7 @@ export default {
   // serverBuildPath: "build/index.js",
   tailwind: true,
   postcss: true,
+  browserNodeBuiltinsPolyfill: {
+    modules: { path: true, util: true },
+  },
 };
