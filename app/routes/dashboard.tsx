@@ -18,10 +18,10 @@ import {
 import { CalendarDateRangePicker } from "./../components/dashboard/date-range-picker";
 import { MainNav } from "./../components/dashboard/main-nav";
 import { Overview } from "./../components/dashboard/overview";
-// import { RecentSales } from "@/app/examples/dashboard/components/recent-sales";
-// import { Search } from "@/app/examples/dashboard/components/search";
+import { RecentSales } from "./../components/dashboard/recent-sales";
+import { Search } from "./../components/dashboard/search";
 import TeamSwitcher from "./../components/dashboard/team-switcher";
-// import { UserNav } from "@/app/examples/dashboard/components/user-nav";
+import { UserNav } from "./../components/dashboard/user-nav";
 
 // export const metadata: Metadata = {
 //   title: "Dashboard",
@@ -53,8 +53,8 @@ export default function DashboardPage() {
             <TeamSwitcher />
             <MainNav className="mx-6" />
             <div className="ml-auto flex items-center space-x-4">
-              {/* <Search />
-              <UserNav /> */}
+              <Search />
+              <UserNav />
             </div>
           </div>
         </div>
@@ -199,7 +199,9 @@ export default function DashboardPage() {
                       You made 265 sales this month.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>{/* <RecentSales /> */}</CardContent>
+                  <CardContent>
+                    <RecentSales />
+                  </CardContent>
                 </Card>
               </div>
             </TabsContent>
