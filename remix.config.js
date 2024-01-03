@@ -8,6 +8,6 @@ export default {
   tailwind: true,
   postcss: true,
   browserNodeBuiltinsPolyfill: {
-    modules: { path: true, util: true },
+    modules: { path: true, util: true, fs: true },
   },
 };

@@ -1,8 +1,8 @@
-// import { cookies } from "next/headers.js";
-// import Image from "next/image.js";
+// import { cookies } from "next/headers";
+// import Image from "next/image";
 
-// import { Mail as MailComponents } from "../components/mail/mail";
-// import { accounts, mails } from "../components/mail/data/data";
+import { Mail as MailComp } from "../components/mail/mail";
+import { accounts, mails } from "../components/mail/data/data";
 
 export default function Mail() {
   // const layout = cookies().get("react-resizable-panels:layout");
@@ -30,13 +30,13 @@ export default function Mail() {
         /> */}
       </div>
       <div className="hidden flex-col md:flex">
-        {/* <MailComponents
+        <MailComp
           accounts={accounts}
           mails={mails}
-          defaultLayout={defaultLayout}
-          defaultCollapsed={defaultCollapsed}
+          // defaultLayout={defaultLayout}
+          // defaultCollapsed={defaultCollapsed}
           navCollapsedSize={4}
-        /> */}
+        />
       </div>
     </>
   );
