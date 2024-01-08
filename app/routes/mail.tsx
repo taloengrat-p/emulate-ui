@@ -4,7 +4,6 @@ import { accounts, mails } from "../components/mail/data/data";
 export default function Mail() {
   return (
     <div className=" flex-col md:flex">
-      arm
       <MailComp
         accounts={accounts}
         mails={mails}
