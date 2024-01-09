@@ -1,5 +1,5 @@
-// import { Separator } from "@/registry/new-york/ui/separator"
-// import { ProfileForm } from "@/app/examples/forms/profile-form"
+import { Separator } from "../components/ui/separator";
+import { ProfileForm } from "../components/forms/profile-form";
 
 export default function Forms() {
   return (
@@ -10,8 +10,8 @@ export default function Forms() {
           This is how others will see you on the site.
         </p>
       </div>
-      {/* <Separator />
-      <ProfileForm /> */}
+      <Separator />
+      <ProfileForm />
     </div>
-  )
+  );
 }

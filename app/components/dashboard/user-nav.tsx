@@ -15,13 +15,15 @@ import {
   DropdownMenuTrigger,
 } from "./../../components/ui/dropdown-menu";
 
+import image1 from "../../../assets/01.png";
+
 export function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="../../assets/01.png" alt="@shadcn" />
+            <AvatarImage src={image1} alt="@shadcn" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>
