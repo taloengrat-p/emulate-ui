@@ -27,7 +27,7 @@ export default function Navbar() {
         <TabsTrigger value="tasks" onClick={() => navigate("/tasks")}>
           Tasks
         </TabsTrigger>
-        <TabsTrigger value="forms" onClick={() => navigate("/forms")}>
+        <TabsTrigger value="forms" onClick={() => navigate("/forms/profile")}>
           Forms
         </TabsTrigger>
       </TabsList>
