@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 "use client";
 
-// import Link from "next/link.js";
 import { LucideIcon } from "lucide-react";
 
 import { cn } from "../../lib/utils";
