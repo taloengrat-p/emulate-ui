@@ -13,7 +13,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <Tabs className="w-full">
+    <Tabs className="w-full m-4" defaultValue="dashboard">
       <TabsList>
         <TabsTrigger value="dashboard" onClick={() => navigate("/dashboard")}>
           Dashboard
