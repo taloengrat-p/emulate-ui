@@ -11,6 +11,7 @@ export interface NavbarProps {
     title: string;
     value: string;
     onClick: () => void;
+    disabled?: boolean;
   }>;
 }
 export default function Navbar({ items, defaultValue }: NavbarProps) {
@@ -18,7 +19,12 @@ export default function Navbar({ items, defaultValue }: NavbarProps) {
     <Tabs className="w-full m-4" defaultValue={defaultValue}>
       <TabsList>
         {items.map((el, index) => (
-          <TabsTrigger key={index} value={el.value} onClick={el.onClick}>
+          <TabsTrigger
+            key={index}
+            value={el.value}
+            onClick={el.onClick}
+            disabled={el.disabled}
+          >
             {el.title}
           </TabsTrigger>
         ))}

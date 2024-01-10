@@ -106,6 +106,28 @@ const cardItems = [
   },
 ];
 
+const tabListItems = [
+  {
+    title: "Overview",
+    value: "overview",
+    disabled: false,
+  },
+  {
+    title: "Analytics",
+    value: "analytics",
+    disabled: true,
+  },
+  {
+    title: "Reports",
+    value: "reports",
+    disabled: true,
+  },
+  {
+    title: "Notifications",
+    value: "notifications",
+    disabled: true,
+  },
+];
 export default function DashboardPage() {
   return (
     <div className="hidden flex-col md:flex">
@@ -129,16 +151,11 @@ export default function DashboardPage() {
         </div>
         <Tabs defaultValue="overview" className="space-y-4">
           <TabsList>
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="analytics" disabled>
-              Analytics
-            </TabsTrigger>
-            <TabsTrigger value="reports" disabled>
-              Reports
-            </TabsTrigger>
-            <TabsTrigger value="notifications" disabled>
-              Notifications
-            </TabsTrigger>
+            {tabListItems.map((e, index) => (
+              <TabsTrigger key={index} value={e.value} disabled={e.disabled}>
+                {e.title}
+              </TabsTrigger>
+            ))}
           </TabsList>
           <TabsContent value="overview" className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
