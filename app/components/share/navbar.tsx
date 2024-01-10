@@ -1,34 +1,30 @@
 import {
   Tabs,
   // TabsContent,
-  TabsList,
-  TabsTrigger,
 } from "./../../components/ui/tabs";
 
+import { ShareTabsList, TabItem } from "./tabs-list";
 export interface NavbarProps {
   defaultValue?: string;
   items: Array<{
     title: string;
     value: string;
-    onClick: () => void;
     disabled?: boolean;
   }>;
+  onTabClick: (item: TabItem) => void;
 }
-export default function Navbar({ items, defaultValue }: NavbarProps) {
+export default function Navbar({
+  items,
+  onTabClick,
+  defaultValue,
+}: NavbarProps) {
+  function onClickTab(item: TabItem) {
+    onTabClick(item);
+  }
+
   return (
     <Tabs className="w-full m-4" defaultValue={defaultValue}>
-      <TabsList>
-        {items.map((el, index) => (
-          <TabsTrigger
-            key={index}
-            value={el.value}
-            onClick={el.onClick}
-            disabled={el.disabled}
-          >
-            {el.title}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+      <ShareTabsList items={items} onChange={onClickTab}></ShareTabsList>
     </Tabs>
   );
 }

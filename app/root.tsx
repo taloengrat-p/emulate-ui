@@ -12,6 +12,7 @@ import {
 import Navbar from "./components/share/navbar";
 import { useNavigate } from "@remix-run/react";
 import { useLocation } from "@remix-run/react";
+import { TabItem } from "./components/share/tabs-list";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -65,10 +66,13 @@ export default function App() {
             items={navItems.map((el) => ({
               title: el.title,
               value: el.value,
-              onClick: () => {
-                navigate(el.to);
-              },
             }))}
+            onTabClick={(item: TabItem) => {
+              const tabItem = navItems.find((e) => e.title === item.title);
+              if (tabItem) {
+                navigate(tabItem.to);
+              }
+            }}
           ></Navbar>
           <Outlet />
         </div>
