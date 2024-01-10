@@ -26,14 +26,17 @@ const listenNowTabItems = [
   {
     title: "Music",
     value: "music",
+    disabled: false,
   },
   {
     title: "Podcasts",
     value: "podcasts",
+    disabled: false,
   },
   {
     title: "Live",
     value: "live",
+    disabled: true,
   },
 ];
 
