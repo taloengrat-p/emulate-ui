@@ -1,16 +1,8 @@
 import { Metadata } from "next";
-// import Image from "next/image.js";
-import { PlusCircledIcon } from "@radix-ui/react-icons";
 
-import { Button } from "./../components/ui/button";
 import { ScrollArea, ScrollBar } from "./../components/ui/scroll-area";
 import { Separator } from "./../components/ui/separator";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "./../components/ui/tabs";
+import { TabsContent } from "./../components/ui/tabs";
 
 import { AlbumArtwork } from "./../components/music/album-artwork";
 import { Menu } from "./../components/music/menu";
@@ -21,11 +13,27 @@ import {
   madeForYouAlbums,
 } from "./../components/music/data/albums";
 import { playlists } from "./../components/music/data/playlists";
+import ShareNavbar from "./../components/share/navbar";
 
 export const metadata: Metadata = {
   title: "Music App",
   description: "Example music app using the components.",
 };
+
+const listenNowTabItems = [
+  {
+    title: "Music",
+    value: "music",
+  },
+  {
+    title: "Podcasts",
+    value: "podcasts",
+  },
+  {
+    title: "Live",
+    value: "live",
+  },
+];
 
 export default function Music() {
   return (
@@ -37,24 +45,7 @@ export default function Music() {
             <Sidebar playlists={playlists} className="hidden lg:block" />
             <div className="col-span-3 lg:col-span-4 lg:border-l">
               <div className="h-full px-4 py-6 lg:px-8">
-                <Tabs defaultValue="music" className="h-full space-y-6">
-                  <div className="space-between flex items-center">
-                    <TabsList>
-                      <TabsTrigger value="music" className="relative">
-                        Music
-                      </TabsTrigger>
-                      <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-                      <TabsTrigger value="live" disabled>
-                        Live
-                      </TabsTrigger>
-                    </TabsList>
-                    <div className="ml-auto mr-4">
-                      <Button>
-                        <PlusCircledIcon className="mr-2 h-4 w-4" />
-                        Add music
-                      </Button>
-                    </div>
-                  </div>
+                <ShareNavbar items={listenNowTabItems} defaultValue="music">
                   <TabsContent
                     value="music"
                     className="border-none p-0 outline-none"
@@ -131,7 +122,26 @@ export default function Music() {
                     <Separator className="my-4" />
                     <PodcastEmptyPlaceholder />
                   </TabsContent>
-                </Tabs>
+                </ShareNavbar>
+                {/* <Tabs defaultValue="music" className="h-full space-y-6">
+                  <div className="space-between flex items-center">
+                    <TabsList>
+                      <TabsTrigger value="music" className="relative">
+                        Music
+                      </TabsTrigger>
+                      <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
+                      <TabsTrigger value="live" disabled>
+                        Live
+                      </TabsTrigger>
+                    </TabsList>
+                    <div className="ml-auto mr-4">
+                      <Button>
+                        <PlusCircledIcon className="mr-2 h-4 w-4" />
+                        Add music
+                      </Button>
+                    </div>
+                  </div>
+                 </Tabs> */}
               </div>
             </div>
           </div>

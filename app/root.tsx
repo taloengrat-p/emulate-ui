@@ -9,7 +9,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Navbar from "./components/share/navbar";
+import ShareNavbar from "./components/share/navbar";
 import { useNavigate } from "@remix-run/react";
 import { useLocation } from "@remix-run/react";
 import { TabItem } from "./components/share/tabs-list";
@@ -61,7 +61,7 @@ export default function App() {
       </head>
       <body>
         <div>
-          <Navbar
+          <ShareNavbar
             defaultValue={location.pathname.replace("/", "")}
             items={navItems.map((el) => ({
               title: el.title,
@@ -73,7 +73,7 @@ export default function App() {
                 navigate(tabItem.to);
               }
             }}
-          ></Navbar>
+          ></ShareNavbar>
           <Outlet />
         </div>
         <ScrollRestoration />

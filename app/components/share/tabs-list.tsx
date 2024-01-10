@@ -13,10 +13,6 @@ interface TabsListProps {
 
 export function ShareTabsList({ items, onChange }: TabsListProps) {
   function handleClick(item: TabItem) {
-    // Invoke the onClick function passed from the parent
-    // onClick("Data sent from child to parent");
-    console.log("Data sent from child to parent");
-
     onChange!(item);
   }
 
