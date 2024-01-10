@@ -1,0 +1,1 @@
+import{d as e,g as t}from"/build/_shared/chunk-C46C5URB.js";var i=e(t(),1),o=()=>[{title:"New Remix App"},{name:"description",content:"Welcome to Remix!"}];function n(){return(0,i.jsx)("div",{style:{fontFamily:"system-ui, sans-serif",lineHeight:"1.8"},children:"MAIN"})}export{n as default,o as meta};

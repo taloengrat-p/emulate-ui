@@ -1,0 +1,5 @@
+import{a as l,f as m,j as $}from"/build/_shared/chunk-ZWSXUEUM.js";import{d as i,f as s,g as d}from"/build/_shared/chunk-C46C5URB.js";var R=i(s(),1);var n=i(s(),1);var c="horizontal",S=["horizontal","vertical"],v=(0,n.forwardRef)((e,r)=>{let{decorative:o,orientation:t=c,...a}=e,p=u(t)?t:c,h=o?{role:"none"}:{"aria-orientation":p==="vertical"?p:void 0,role:"separator"};return(0,n.createElement)(m.div,l({"data-orientation":p},h,a,{ref:r}))});v.propTypes={orientation(e,r,o){let t=e[r],a=String(t);return t&&!u(t)?new Error(E(a,o)):null}};function E(e,r){return`Invalid prop \`orientation\` of value \`${e}\` supplied to \`${r}\`, expected one of:
+  - horizontal
+  - vertical
+
+Defaulting to \`${c}\`.`}function u(e){return S.includes(e)}var f=v;var P=i(d(),1),O=R.forwardRef(({className:e,orientation:r="horizontal",decorative:o=!0,...t},a)=>(0,P.jsx)(f,{ref:a,decorative:o,orientation:r,className:$("shrink-0 bg-border",r==="horizontal"?"h-[1px] w-full":"h-full w-[1px]",e),...t}));O.displayName=f.displayName;export{O as a};
