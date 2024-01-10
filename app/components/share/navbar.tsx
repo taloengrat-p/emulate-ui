@@ -4,32 +4,23 @@ import {
   TabsList,
   TabsTrigger,
 } from "./../../components/ui/tabs";
-import { useNavigate } from "@remix-run/react";
 
 export interface NavbarProps {
-  arm: string;
+  items: Array<{
+    title: string;
+    value: string;
+    onClick: () => void;
+  }>;
 }
-export default function Navbar() {
-  const navigate = useNavigate();
-
+export default function Navbar({ items }: NavbarProps) {
   return (
     <Tabs className="w-full m-4" defaultValue="dashboard">
       <TabsList>
-        <TabsTrigger value="dashboard" onClick={() => navigate("/dashboard")}>
-          Dashboard
-        </TabsTrigger>
-        <TabsTrigger value="music" onClick={() => navigate("/music")}>
-          Music
-        </TabsTrigger>
-        <TabsTrigger value="mail" onClick={() => navigate("/mail")}>
-          Mail
-        </TabsTrigger>
-        <TabsTrigger value="tasks" onClick={() => navigate("/tasks")}>
-          Tasks
-        </TabsTrigger>
-        <TabsTrigger value="forms" onClick={() => navigate("/forms/profile")}>
-          Forms
-        </TabsTrigger>
+        {items.map((el, index) => (
+          <TabsTrigger key={index} value={el.value} onClick={el.onClick}>
+            {el.title}
+          </TabsTrigger>
+        ))}
       </TabsList>
     </Tabs>
   );

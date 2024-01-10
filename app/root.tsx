@@ -10,13 +10,43 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import Navbar from "./components/share/navbar";
+import { useNavigate } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
+const navItems = [
+  {
+    title: "Dashboard",
+    value: "dashboard",
+    to: "/dashboard",
+  },
+  {
+    title: "Music",
+    value: "music",
+    to: "/music",
+  },
+  {
+    title: "Mail",
+    value: "mail",
+    to: "/mail",
+  },
+  {
+    title: "Tasks",
+    value: "tasks",
+    to: "/tasks",
+  },
+  {
+    title: "Forms",
+    value: "forms",
+    to: "/forms/profile",
+  },
+];
+
 export default function App() {
+  const navigate = useNavigate();
   return (
     <html lang="en">
       <head>
@@ -27,7 +57,15 @@ export default function App() {
       </head>
       <body>
         <div>
-          <Navbar></Navbar>
+          <Navbar
+            items={navItems.map((el) => ({
+              title: el.title,
+              value: el.value,
+              onClick: () => {
+                navigate(el.to);
+              },
+            }))}
+          ></Navbar>
           <Outlet />
         </div>
         <ScrollRestoration />
