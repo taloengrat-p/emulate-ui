@@ -17,10 +17,34 @@ import { playlists } from "./../components/music/data/playlists";
 import ShareNavbar from "./../components/share/navbar";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
 
+import discover1 from "../../assets/images/music/discover_1.svg";
+import discover2 from "../../assets/images/music/discover_2.svg";
+import discover3 from "../../assets/images/music/discover_3.svg";
+
+import library1 from "../../assets/images/music/library_1.svg";
+import library2 from "../../assets/images/music/library_2.svg";
+import library3 from "../../assets/images/music/library_3.svg";
+import library4 from "../../assets/images/music/library_4.svg";
+import library5 from "../../assets/images/music/library_5.svg";
+
 export const metadata: Metadata = {
   title: "Music App",
   description: "Example music app using the components.",
 };
+
+const discoverItems = [
+  { title: "Listen Now", icon: discover1 },
+  { title: "Browse", icon: discover2 },
+  { title: "Radio", icon: discover3 },
+];
+
+const libraryItems = [
+  { title: "Playlists", icon: library1 },
+  { title: "Songs", icon: library2 },
+  { title: "Made for you", icon: library3 },
+  { title: "Artists", icon: library4 },
+  { title: "Albums", icon: library5 },
+];
 
 const listenNowTabItems = [
   {
@@ -47,7 +71,12 @@ export default function Music() {
       <div className="border-t">
         <div className="bg-background">
           <div className="grid lg:grid-cols-5">
-            <Sidebar playlists={playlists} className="hidden lg:block" />
+            <Sidebar
+              playlists={playlists}
+              discoverItems={discoverItems}
+              libraryItems={libraryItems}
+              className="hidden lg:block"
+            />
             <div className="col-span-3 lg:col-span-4 lg:border-l">
               <div className="h-full px-4 py-6 lg:px-8">
                 <ShareNavbar
