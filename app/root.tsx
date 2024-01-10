@@ -11,6 +11,7 @@ import {
 } from "@remix-run/react";
 import Navbar from "./components/share/navbar";
 import { useNavigate } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -47,6 +48,8 @@ const navItems = [
 
 export default function App() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <html lang="en">
       <head>
@@ -58,6 +61,7 @@ export default function App() {
       <body>
         <div>
           <Navbar
+            defaultValue={location.pathname.replace("/", "")}
             items={navItems.map((el) => ({
               title: el.title,
               value: el.value,
