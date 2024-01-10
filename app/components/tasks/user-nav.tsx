@@ -12,6 +12,13 @@ import {
 } from "../ui/dropdown-menu";
 import image3 from "../../../assets/03.png";
 
+const dropdownMenuGroupItems1 = [
+  { title: "Profile", shortcut: "⇧⌘P" },
+  { title: "Billing", shortcut: "⌘B" },
+  { title: "Settings", shortcut: "⌘S" },
+];
+const dropdownMenuGroupItems2 = [{ title: "Log out", shortcut: "⇧⌘Q" }];
+
 export function UserNav() {
   return (
     <DropdownMenu>
@@ -34,25 +41,21 @@ export function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {dropdownMenuGroupItems1.map((e, index) => (
+            <DropdownMenuItem key={`dropdown-1-${index}`}>
+              {e.title}
+              <DropdownMenuShortcut>{e.shortcut}</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          ))}
           <DropdownMenuItem>New Team</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        {dropdownMenuGroupItems2.map((e, index) => (
+          <DropdownMenuItem key={`dropdown-2-${index}`}>
+            {e.title}
+            <DropdownMenuShortcut>{e.shortcut}</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
