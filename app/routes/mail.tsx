@@ -9,7 +9,7 @@ export default function Mail() {
         mails={mails}
         defaultLayout={[20, 40, 40]}
         defaultCollapsed={false}
-        navCollapsedSize={4}
+        navCollapsedSize={2.32}
       />
     </div>
   );

@@ -76,12 +76,6 @@ export function Mail({
           collapsible={true}
           minSize={15}
           maxSize={20}
-          //   onCollapse={(collapsed: any) => {
-          //     setIsCollapsed(collapsed);
-          //     document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-          //       collapsed
-          //     )}`;
-          //   }}
           className={cn(
             isCollapsed &&
               "min-w-[50px] transition-all duration-300 ease-in-out"
@@ -214,7 +208,7 @@ export function Mail({
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={defaultLayout[2]}>
           <MailDisplay
-            mail={mails.find((item) => item.id === mail.selected) || null}
+            mail={mails.find((item) => item.id === mail.selected) ?? null}
           />
         </ResizablePanel>
       </ResizablePanelGroup>
